@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import "./App.css";
 import { Container, Stack, Typography } from "@mui/material";
 import { JavaScriptLogo } from "./JavaScriptLogo";
@@ -8,9 +6,7 @@ import { useQuestionsStore } from "./store/questions";
 import { Game } from "./Game";
 
 function App() {
-
-  const questions = useQuestionsStore(state => state.questions);
-
+  const questions = useQuestionsStore((state) => state.questions);
 
   return (
     <main>
@@ -21,13 +17,13 @@ function App() {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <JavaScriptLogo/>
+          <JavaScriptLogo />
           <Typography variant="h2" component="h1">
             JavaScript Quiz
           </Typography>
         </Stack>
-          {questions.length === 0 && <Start/>}
-          {questions.length > 0 && <Game/>}
+        {questions.length === 0 && <Start />}
+        {questions.length > 0 && <Game />}
       </Container>
     </main>
   );
